@@ -14,4 +14,4 @@ RUN apk update && apk add --no-cache python make g++ tzdata ca-certificates
 RUN NODE_ENV=production npm install
 
 ENTRYPOINT [ "npm", "run" ]
-CMD ["svc:start", "worker"]
+CMD ["svc:start"]
