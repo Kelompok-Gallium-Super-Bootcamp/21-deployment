@@ -8,7 +8,7 @@ module.exports = {
     performance: './webapp/src/performance/vdom.js',
   },
   output: {
-    path: path.resolve(__dirname, 'www'),
+    path: path.resolve(__dirname, 'webapp/www'),
     filename: '[name].js',
   },
   devtool: 'inline-source-map',
