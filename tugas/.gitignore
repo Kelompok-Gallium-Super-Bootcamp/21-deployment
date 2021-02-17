@@ -2,6 +2,7 @@ node_modules
 .nyc_output
 *.db
 file-storage
+<<<<<<< HEAD
 .vercel
 docs
 .tmrc
@@ -9,3 +10,10 @@ docs
 www/*.js
 www/*.txt
 
+=======
+.tmrc
+.env
+.vercel
+dist
+docs
+>>>>>>> 8aa935e1070ae3bf71a7400f787932a542caa635
