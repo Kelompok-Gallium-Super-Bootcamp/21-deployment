@@ -25,7 +25,6 @@ services:
   minio:
     image: minio/minio
     command: ["server", "/data"]
-    hostname: minio
     environment:
       MINIO_ACCESS_KEY: minio
       MINIO_SECRET_KEY: miniostorage
@@ -47,7 +46,7 @@ services:
       tm_database__username: postgres
       tm_database__password: postgres
       tm_database__database: tm
-      tm_storage__endPoint: minio:9000
+      tm_storage__endPoint: minio
       tm_storage__accessKey: minio
       tm_storage__secretKey: miniostorage
       tm_bus__host: nats
@@ -75,6 +74,10 @@ services:
       tm_storage__endPoint: minio
       tm_storage__accessKey: minio
       tm_storage__secretKey: miniostorage
+      tm_bus__host: nats
+      tm_bus__port: 4222
+      tm_kv__host: redis
+      tm_kv__port: 6379
       todo_serverTask__port: 7002
     ports:
       - 7002:7002
@@ -95,6 +98,10 @@ services:
       tm_storage__endPoint: minio
       tm_storage__accessKey: minio
       tm_storage__secretKey: miniostorage
+      tm_bus__host: nats
+      tm_bus__port: 4222
+      tm_kv__host: redis
+      tm_kv__port: 6379
       todo_serverPerformance__port: 7003
     ports:
       - 7003:7003

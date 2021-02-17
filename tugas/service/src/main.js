@@ -28,10 +28,11 @@ async function init() {
   }
   try {
     console.log('connect to message bus');
-    await bus.connect(config.bus);
+    await bus.connect(config.bus.host, config.bus);
     console.log('message bus connected');
   } catch (err) {
-    console.error('message bus connection failed');
+    console.error(err);
+		console.error('message bus connection failed');
     process.exit(1);
   }
   try {
@@ -39,6 +40,7 @@ async function init() {
     await kv.connect(config.kv);
     console.log('key value store connected');
   } catch (err) {
+		console.error(err);
     console.error('key value store connection failed');
     process.exit(1);
   }
