@@ -53,7 +53,7 @@ services:
       tm_bus__port: 4222
       tm_kv__host: redis
       tm_kv__port: 6379
-      todo_serverWorker__port: 7001
+      tm_serverWorker__port: 7001
     expose:
       - 7001
     ports:
@@ -80,8 +80,9 @@ services:
       tm_bus__port: 4222
       tm_kv__host: redis
       tm_kv__port: 6379
-      todo_serverWorker__port: 7002
-      todo_serverTask__port: 7002
+      tm_serverWorker__host: worker-svc
+      tm_serverWorker__port: 7001
+      tm_serverTask__port: 7002
     ports:
       - 7002:7002
   perf-svc:
